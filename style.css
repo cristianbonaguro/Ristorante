@@ -15,26 +15,28 @@ html {
   height: 100%;
 }
 
+
 /* ? hero image */
 
 .hero {
   width: 100%;
   height: 100%;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url("images/hero2.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  animation: herochange 20s linear infinite;
+  z-index: 1;
+  animation: herochange 60s linear infinite;
+  background-attachment: fixed;
 }
 
 @keyframes herochange {
-  0% {
+  /* ? prima */
+  /* 0% {
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
       url("images/hero2.jpg");
     opacity: 100%;
   }
   25% {
-    opacity: 50%;
+    opacity: 20%;
   }
   50% {
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
@@ -42,14 +44,54 @@ html {
     opacity: 100%;
   }
   75% {
-    opacity: 50%;
+    opacity: 20%;
   }
-  100% {
+   100% {
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
       url("images/hero2.jpg");
     opacity: 100%;
+  }  */
+  /* ? seconda */
+  0%{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("images/hero2.jpg");
+    filter: contrast(100%); -webkit-filter: contrast(100%);
+  }
+  15%{
+    filter: contrast(0); -webkit-filter: contrast(0);
+  transition: opacity 0.5s ease-in-out;
+  }
+
+  30%{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("images/hero.jpg");
+    filter: contrast(100%); -webkit-filter: contrast(100%);
+  }
+
+  50%{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("images/hero.jpg");
+    filter: contrast(100%); -webkit-filter: contrast(100%);
+  }
+
+  65%{
+    filter: contrast(0); -webkit-filter: contrast(0);
+  transition: opacity 0.5s ease-in-out;
+  }
+
+  80%{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("images/hero2.jpg");
+    filter: contrast(100%); -webkit-filter: contrast(100%);
+  }
+
+  100%{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("images/hero2.jpg");
+    filter: contrast(100%); -webkit-filter: contrast(100%);
   }
 }
+/* ! end hero image */
 
 /*? nav */
 .header {
@@ -67,6 +109,7 @@ html {
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 1000;
 }
 
 .logo {
@@ -75,9 +118,10 @@ html {
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 1000;
 }
 
-ul {
+.header ul {
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -86,17 +130,319 @@ ul {
   align-items: center;
 }
 
-li {
+a{
+  color: whitesmoke ;
+  text-decoration: none;
+  transition: color 2s, transform 2s;
+}
+
+a:hover{color: #09abe6;}
+.header li{
   list-style-type: none;
   font-size: 26px;
   color: whitesmoke;
+  transition: color 2s, transform 2s;
 }
 .second {
   margin-left: 20%;
 }
+.header li:hover {
+  color: #09abe6;
+  transform: scale(1.2, 1.2);
+}
+
+/* ! end nav */
 
 /*? img */
 img {
   max-width: 100%;
   max-height: 100%;
 }
+
+/* ? class title */
+.title{
+  height: 20%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 24px;
+} 
+
+/* ? class contenitore */
+
+.contenitore{
+  height: 80%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+
+/* ? Ristorante */
+.minion{
+  height: 90%;
+  width: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+p{
+  font-size: 24px;
+}
+
+.text{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50%;
+  width: 100%;
+  text-align: center;
+}
+.image{
+  height: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ? menu */
+
+.card{
+  width: 20%;
+  height: 80%;
+  margin: 0 5%;
+  border: solid 2px black;
+  position: relative;
+  border-radius: 5px;
+}
+
+
+.miniImg{
+  width: 100%;
+  height: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-size:cover;
+}
+#ant{
+  background-image: url("images/menu/antipasti/1.jpg");
+}
+#primi{
+  background-image: url("images/menu/primi/1.jpg");
+}
+#secondi{
+  background-image: url("images/menu/secondi/1.jpeg");
+}
+
+
+.list{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 60%;
+  flex-direction: column;
+}
+
+.portata{
+  height: 20%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.elenco{
+  display: flex;
+  align-items: center;
+  height: 90%;
+  width: 100%;
+}
+
+.elenco li{
+  margin-left: 20px ;
+  list-style-type: none;
+  font-size: 22px;
+  text-align: left;
+  margin:5px;
+}
+
+.elenco li:hover{
+  text-decoration: underline;
+}
+
+
+.portata h1 {
+  font-size: 26px;
+}
+
+span{
+  font-size: 16px;
+  position: absolute;
+  right: 5px;
+}
+
+/* ? plane */
+.plane{
+  height: 180px;
+  width: 120px; 
+  z-index: 100;
+   
+}
+
+#uno{
+  position: absolute;
+  right: 50px;
+  rotate: -50deg;
+  animation: swing1 6s linear infinite;
+}
+
+
+#due{
+  transform: scaleY(-1); 
+  rotate: -120deg;
+  position: absolute;
+  left: 50px;
+  margin-top: -100px;
+  animation: swing2 6s linear infinite;
+}
+
+#tre{
+  position: absolute;
+  right: 50px;
+  margin-top:-140px;
+  rotate: -50deg;
+  animation: swing1 6s linear infinite;
+}
+@keyframes swing1 {
+  0%{
+    rotate: -50deg;
+  }
+  50%{
+    rotate: -120deg;
+  }
+  100%{
+    rotate: -50deg;
+  }
+}
+
+  @keyframes swing2 {
+    0%{
+      rotate: -120deg;
+    }
+    50%{
+      rotate: -200deg;
+    }
+    100%{
+      rotate: -120deg;
+    }
+  
+}
+
+/* ? Mappa */
+#mappa{
+  width: 80%;
+  height: 90%;
+  border: 2px solid black;
+  border-radius: 5px;
+}
+
+#mappa iframe{
+  height: 100%;
+  width: 100%;
+}
+
+/* ? Prenota */
+
+.form{
+  z-index: 100;
+  width: 50%;
+  height: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+form{
+  width: 80%;
+  height: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border: 2px solid black;
+}
+
+h2{
+  font-size: 20px;
+}
+
+input{
+border: 2px solid black;
+margin: 2%;
+}
+
+.input{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+.primo{
+  margin:5%;
+}
+.secondo{
+  margin: 5%;
+}
+.secondo input{
+  width: 100%;
+  text-align: center;
+}
+select{
+  background: none;
+  text-align: center;
+  border: 2px solid black;
+  margin: 2%;
+}
+.riga{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+#rig{
+ width: 120%;
+}
+ #textArea{
+  width: 80%;
+  height: 80%;
+}
+
+/* ? parallax */
+
+.parallax{
+  width: 100%;
+  height: 60%;
+  background-attachment: fixed;
+  background-size: cover;
+}
+#p1{
+  background-image: url(images/menu.jpg);
+}
+#p2{
+  background-image: url(images/mappa.jpg);
+}
+#p3{
+  background-image: url(images/prenotare.jpg);
+}
+
+
+
+
+
+
