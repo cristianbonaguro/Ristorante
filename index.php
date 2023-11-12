@@ -180,12 +180,8 @@ La Trattoria il Gusto del Volo è una vera e propria esperienza gourmet, da prov
                 </div>
                 <div id="rig"class="riga">
                 <div class="input secondo">
-                <h2>~ Seleziona la data ~</h2>
-                <input name="day"type="date" required>
-                </div>
-                <div class="input secondo">
-                <h2>~ Seleziona l'ora' ~</h2>
-                <input name="time" type="time"required>
+                <h2>~ Seleziona la data e l'ora~</h2>
+                <input name="day" type="datetime-local" required>
                 </div>
                 <div class="input secondo">
                 <h2>~ In quanti siete? ~</h2>
@@ -288,6 +284,6 @@ La Trattoria il Gusto del Volo è una vera e propria esperienza gourmet, da prov
 
 <?php
     if (isset($_POST['submit'])) {
-        mail($_POST['email'],'cricri@070605@gmail.com',"Egregio Signore/a ".$_POST['name']." la sua prenotazione per il giorno: ".$_POST['day']." alle ore:".$_POST['time']." per ".$_POST['posti']." è confermata");
+        mail($_POST['email'],'cricri@070605@gmail.com',"Egregio Signore/a ".$_POST['name']." la sua prenotazione per il giorno: ".$_POST['day']." per ".$_POST['posti']." persone è confermata");
       }
 ?>
