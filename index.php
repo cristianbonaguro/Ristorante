@@ -1,3 +1,13 @@
+<?php
+    $array = array();
+
+    $array['10'] = ['posti'=> 4];
+    $array['8'] = ['posti'=> 6];
+    $array['6'] = ['posti'=> 10];
+    $array['4'] = ['posti'=> 14];
+    $array['2'] = ['posti'=> 18];
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,6 +16,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
     <!-- header -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="style.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -154,53 +165,112 @@ La Trattoria il Gusto del Volo è una vera e propria esperienza gourmet, da prov
         <img src="images/plane.png" alt="image">
     </div>
     <div id="last "class="contenitore">
-        <div class="form">
+        <div class="form" method="post">
             <form method="post">
                 <div class="riga">
                 <div class="input primo">
                 <h2>~ Il tuo nome ~</h2>
-                 <input type="text"> 
+                 <input name="name" type="text" required> 
                 </div>
                 <div class="input primo">
                 <h2>~ La tua Email ~</h2>
-                <input type="email">
+                <input name="email" type="email" required>
                 </div>
                 </div>
                 <div id="rig"class="riga">
                 <div class="input secondo">
                 <h2>~ Seleziona la data ~</h2>
-                <input type="date">
+                <input name="day"type="date" required>
                 </div>
                 <div class="input secondo">
                 <h2>~ Seleziona l'ora' ~</h2>
-                <input type="time">
+                <input name="time" type="time"required>
                 </div>
                 <div class="input secondo">
                 <h2>~ In quanti siete? ~</h2>
-                <select name="posti">
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                    <option value="6">6</option>
-                    <option value="7">7</option>
-                    <option value="8">8</option>
-                    <option value="9">9</option>
-                    <option value="10">10</option>
+                <select id="posti" name="posti" method="post">
+                    <option name="posti" value="2">1</option>
+                    <option name="posti" value="2">2</option>
+                    <option name="posti"value="4">3</option>
+                    <option name="posti"value="4">4</option>
+                    <option name="posti"value="6">5</option>
+                    <option name="posti"value="6">6</option>
+                    <option name="posti"value="8">7</option>
+                    <option name="posti"value="8">8</option>
+                    <option name="posti"value="10">9</option>
+                    <option name="posti"value="10">10</option>
                 </select> 
+                <label >
+                  <?php  echo 'posti disponibili: '.$array[2]['posti'];
+                      function posti($num){
+        switch ($num) {
+            case '10':
+                {
+                    echo 'posti disponibili: '.$array[10]['posti'];
+                }
+                break;
+                case '8':
+                {
+                    echo 'posti disponibili: '.$array[8]['posti'];
+                }
+                break;
+                case '6':
+                    {
+                        echo 'posti disponibili: '.$array[6]['posti']; 
+                    }
+                break;
+                case '4':
+                {
+                    echo 'posti disponibili: '.$array[4]['posti'];      
+                }
+                break;
+                case '2':
+                 {
+                    echo 'posti disponibili: '.$array[2]['posti'];        
+                 }
+                break;
+        }
+    }
+?>
+                </label>
                  </div>
             </div>
           
                 <h2>~ Altre Informazioni ~</h2>
-                <input id="textArea" type="text">
-                
-                <input type="submit">
+                <textarea   rows="4" cols="50">
+                </textArea> 
+                <input name="submit" type="submit">
             </form>
         </div>
     
 </div>
-<!----------------------------- Prenotazione  ------------------------>
+<!----------------------------- Footer  ------------------------>
+<footer>
+    <div id="detail">
+        <div class="details">
+                <h3> La Sede </h3>
+                <h4>Via Mario Dotti, 44124 Ferrara FE</h4>
+        </div>
+        <div class="details">
+        <h3> Gli Orari </h3>
+        <h4>Mercoledì-Domenica <br> 12.00/14:30 - 19:30/22:30</h4>
+        </div>
+    </div>
+    <div id="follow">
+            <div id="copyright">
+                 <span> Copyright © 2023 Bonaguro Cristian 5°G </span>
+                 <h4>Telefono: 351 578 8011</h4>
+            <a href="https://www.facebook.com/ilgustodelvolo/?locale=it_IT"><img src="images/facebook.png" alt="icon"></a>
+               
+            </div>
+    </div>
+</footer>
 </body>  
 <script src="script.js"></script>
 </html>
+
+<?php
+    if (isset($_POST['submit'])) {
+        mail($_POST['email'],'cricri@070605@gmail.com',"Egregio Signore/a ".$_POST['name']." la sua prenotazione per il giorno: ".$_POST['day']." alle ore:".$_POST['time']." per ".$_POST['posti']." è confermata");
+      }
+?>
