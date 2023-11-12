@@ -1,6 +1,7 @@
 <?php
     $array = array();
 
+    $array['12'] = ['posti'=> 2];
     $array['10'] = ['posti'=> 4];
     $array['8'] = ['posti'=> 6];
     $array['6'] = ['posti'=> 10];
@@ -189,50 +190,13 @@ La Trattoria il Gusto del Volo è una vera e propria esperienza gourmet, da prov
                 <div class="input secondo">
                 <h2>~ In quanti siete? ~</h2>
                 <select id="posti" name="posti" method="post">
-                    <option name="posti" value="2">1</option>
-                    <option name="posti" value="2">2</option>
-                    <option name="posti"value="4">3</option>
-                    <option name="posti"value="4">4</option>
-                    <option name="posti"value="6">5</option>
-                    <option name="posti"value="6">6</option>
-                    <option name="posti"value="8">7</option>
-                    <option name="posti"value="8">8</option>
-                    <option name="posti"value="10">9</option>
-                    <option name="posti"value="10">10</option>
+                    <option name="posti" value="2">tavolo da 2</option>
+                    <option name="posti"value="4">tavolo da 4</option>
+                    <option name="posti"value="6">tavolo da 6</option>
+                    <option name="posti"value="8">tavolo da 8</option>
+                    <option name="posti"value="10">tavolo da 10</option>
+                    <option name="posti"value="10">tavolo da 12</option>
                 </select> 
-                <label >
-                  <?php  echo 'posti disponibili: '.$array[2]['posti'];
-                      function posti($num){
-        switch ($num) {
-            case '10':
-                {
-                    echo 'posti disponibili: '.$array[10]['posti'];
-                }
-                break;
-                case '8':
-                {
-                    echo 'posti disponibili: '.$array[8]['posti'];
-                }
-                break;
-                case '6':
-                    {
-                        echo 'posti disponibili: '.$array[6]['posti']; 
-                    }
-                break;
-                case '4':
-                {
-                    echo 'posti disponibili: '.$array[4]['posti'];      
-                }
-                break;
-                case '2':
-                 {
-                    echo 'posti disponibili: '.$array[2]['posti'];        
-                 }
-                break;
-        }
-    }
-?>
-                </label>
                  </div>
             </div>
           
@@ -241,6 +205,59 @@ La Trattoria il Gusto del Volo è una vera e propria esperienza gourmet, da prov
                 </textArea> 
                 <input name="submit" type="submit">
             </form>
+        </div>
+
+        <div id="tavoli">
+            <div class="tavoli">
+                <div class="imgt">
+                <img src="images/tavolo.png">
+            </div>
+            <div class="scitte">
+                <h5>Per 2 persone</h5>
+                <h5><?php echo "Tavoli rimasti: ".$array[2]['posti'] ?></h5>
+            </div>
+            </div>
+            <div class="tavoli">
+                <div class="imgt">
+                <img src="images/tavolo.png">
+            </div>
+            <div class="scitte">
+                <h5>Per 4 persone</h5>
+                <h5><?php echo "Tavoli rimasti: ".$array[4]['posti'] ?></h5>
+            </div>
+            </div><div class="tavoli">
+                <div class="imgt">
+                <img src="images/tavolo.png">
+            </div>
+            <div class="scitte">
+                <h5>Per 6 persone</h5>
+                <h5><?php echo "Tavoli rimasti: ".$array[6]['posti'] ?></h5>
+            </div>
+            </div><div class="tavoli">
+                <div class="imgt">
+                <img src="images/tavolo.png">
+            </div>
+            <div class="scitte">
+                <h5>Per 8 persone</h5>
+                <h5><?php echo "Tavoli rimasti: ".$array[8]['posti'] ?></h5>
+            </div>
+            </div><div class="tavoli">
+                <div class="imgt">
+                <img src="images/tavolo.png">
+            </div>
+            <div class="scitte">
+                <h5>Per 10 persone</h5>
+                <h5><?php echo "Tavoli rimasti: ".$array[10]['posti'] ?></h5>
+            </div>
+            </div><div class="tavoli">
+                <div class="imgt">
+                <img src="images/tavolo.png">
+            </div>
+            <div class="scitte">
+                <h5>Per 12 persone</h5>
+                <h5><?php echo "Tavoli rimasti: ".$array[12]['posti'] ?></h5>
+            </div>
+            </div>
         </div>
     
 </div>

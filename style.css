@@ -428,6 +428,36 @@ label{
   border: 2px solid black;
 }
 
+#tavoli{
+  width: 400px;
+  height: 400px;
+ 
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.tavoli{
+  height: 15%;
+  width: 40%;
+  margin: 2%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  text-align: center;
+}
+.imgt{
+  height: 100%;
+  width: 50%;
+}
+.scritte{
+  height: 100%;
+  width: 50%;
+  
+}
+
 /* ? parallax */
 
 .parallax{
